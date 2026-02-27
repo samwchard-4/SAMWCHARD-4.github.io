@@ -1,55 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Chard Capital</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chard Capital</title>
+  <meta name="description" content="Independent investment research, portfolio disclosure, and letters." />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logo.png">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Georgia, serif;
-            background-color: #0f172a;
-            color: white;
-            text-align: center;
-        }
-
-        .container {
-            padding: 80px 20px;
-        }
-
-        .logo {
-            width: 220px;
-            margin-bottom: 40px;
-        }
-
-        h1 {
-            font-weight: 400;
-            letter-spacing: 2px;
-        }
-
-        p {
-            max-width: 600px;
-            margin: 20px auto;
-            line-height: 1.6;
-            opacity: 0.85;
-        }
-    </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body class="bg">
+  <header class="topbar">
+    <a class="brand" href="index.html">CHARD CAPITAL</a>
+    <nav class="nav">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="letters.html">Letters</a>
+      <a href="research.html">Research</a>
+      <a href="models.html">Models</a>
+    </nav>
+  </header>
 
-<body>
-    <div class="container">
-        <img src="logo.png" alt="Chard Capital Logo" class="logo">
+  <main class="hero">
+    <div class="hero-inner">
 
-        <h1>Chard Capital</h1>
+      <!-- Logo -->
+      <img src="/logo.png" alt="Chard Capital Logo" style="height:120px; margin-bottom: 20px;">
 
-        <p>
-            A disciplined approach to long-term capital allocation.
-        </p>
+      <h1 class="title">CHARD CAPITAL</h1>
+      <p class="subtitle">Independent Investment Research</p>
+
+      <div class="hero-links">
+        <a class="pill" href="portfolio.html">PORTFOLIO</a>
+        <a class="pill" href="letters.html">LETTERS</a>
+        <a class="pill" href="research.html">RESEARCH</a>
+        <a class="pill" href="models.html">MODELS</a>
+      </div>
+
+      <p class="micro">
+        This site is an archive of personal research and portfolio disclosure. Not investment advice.
+      </p>
     </div>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="y"></span> Chard Capital</span>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
