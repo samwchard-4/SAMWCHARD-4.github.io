@@ -63,9 +63,17 @@ a:hover{opacity:.9}
   justify-content:center;
   padding: 48px 18px;
 }
+
 .hero-inner{
   width:min(900px, 92vw);
   text-align:center;
+}
+
+/* --- Logo sizing + spacing adjustment --- */
+.hero-logo{
+  width: 360px;
+  max-width: 85%;
+  margin-bottom: 6px;   /* decrease this to tighten gap more */
 }
 
 .title{
