@@ -4,16 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Letters — Chard Capital</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logov2.png">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="bg">
   <header class="topbar">
-    <a class="brand" href="index.html">
-  <img class="brand-logo" src="/logov2.png" alt="Chard Capital Logo">
-  <span>CHARD CAPITAL</span>
-</a>
+    <!-- Top-left brand (TEXT ONLY) -->
+    <a class="brand" href="index.html">CHARD CAPITAL</a>
+
+    <!-- Navigation -->
     <nav class="nav">
-     <a class="brand" href="index.html">CHARD CAPITAL</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a class="active" href="letters.html">Letters</a>
+      <a href="research.html">Research</a>
+      <a href="models.html">Models</a>
     </nav>
   </header>
 
@@ -33,6 +40,8 @@
     <span>© <span id="y"></span> Chard Capital</span>
   </footer>
 
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
