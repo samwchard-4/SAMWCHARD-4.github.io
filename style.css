@@ -269,3 +269,66 @@ a:hover{opacity:.9}
     top:1px;
   }
 }
+/* ===== Mobile fixes (final) ===== */
+@media (max-width: 640px){
+
+  /* Make header stack cleanly */
+  .topbar{
+    flex-wrap:wrap;
+    align-items:flex-start;
+    padding:14px 16px;
+    gap:10px;
+  }
+
+  /* Brand stays on its own line */
+  .brand{
+    width:100%;
+  }
+
+  /* Nav becomes a wrapped row under the brand */
+  .nav{
+    width:100%;
+    flex-wrap:wrap;
+    gap:10px 14px;
+  }
+
+  /* Prevent long headings from clipping */
+  .page-head h1{
+    font-size:34px;
+    line-height:1.1;
+    word-break:break-word;
+  }
+
+  /* Portfolio table: force no sideways scrolling */
+  .card{
+    padding: 14px 12px;
+  }
+
+  .trow{
+    grid-template-columns: 1fr 86px; /* tighter percent column */
+    gap:10px;
+    padding: 10px 6px;
+  }
+
+  .tcell{
+    font-size:13px;
+    min-width:0;
+  }
+
+  .trow .tcell:first-child{
+    overflow-wrap:anywhere;
+  }
+
+  /* Slightly smaller header logo on mobile */
+  .brand-logo{
+    height:13px;
+    top:1px;
+  }
+
+  /* Homepage hero logo slightly smaller */
+  .hero-logo{
+    width: 280px;
+    max-width: 90%;
+    margin-bottom: 10px;
+  }
+}
