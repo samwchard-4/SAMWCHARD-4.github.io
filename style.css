@@ -11,6 +11,7 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
+html,body{overflow-x:hidden;} /* prevents sideways scroll */
 body{
   margin:0;
   font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
@@ -21,6 +22,7 @@ body{
 a{color:inherit; text-decoration:none}
 a:hover{opacity:.9}
 
+/* ===== Header ===== */
 .topbar{
   display:flex;
   align-items:center;
@@ -30,11 +32,26 @@ a:hover{opacity:.9}
   border-bottom:1px solid var(--line);
 }
 
+/* Brand becomes logo + text */
 .brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
   letter-spacing:.12em;
   font-size:14px;
   font-weight:600;
   text-transform:uppercase;
+}
+
+/* THIS is the key: logo height matches text size */
+.brand-logo{
+  height:14px;      /* same as .brand font-size */
+  width:auto;
+  display:block;
+  object-fit:contain;
+  position:relative;
+  top:1px;          /* tiny optical alignment */
 }
 
 .nav{
@@ -56,6 +73,7 @@ a:hover{opacity:.9}
   margin-top:6px;
 }
 
+/* ===== Home hero ===== */
 .hero{
   min-height: calc(100vh - 62px);
   display:flex;
@@ -69,11 +87,11 @@ a:hover{opacity:.9}
   text-align:center;
 }
 
-/* --- Logo sizing + spacing adjustment --- */
+/* Large homepage logo */
 .hero-logo{
   width: 360px;
   max-width: 85%;
-  margin-bottom: 6px;   /* decrease this to tighten gap more */
+  margin-bottom: 6px;
 }
 
 .title{
@@ -124,6 +142,7 @@ a:hover{opacity:.9}
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
+/* ===== Inner pages ===== */
 .page{
   padding: 46px 18px 66px;
   display:flex;
@@ -132,12 +151,14 @@ a:hover{opacity:.9}
 .page > *{
   width:min(980px, 92vw);
 }
+
 .page-head h1{
   margin:0;
   font-size: 44px;
   letter-spacing:.04em;
   font-weight:500;
 }
+
 .muted{
   margin:10px 0 0;
   color: var(--muted);
@@ -154,11 +175,13 @@ a:hover{opacity:.9}
   box-shadow: var(--shadow);
 }
 
+/* ===== Portfolio table ===== */
 .table{
   display:flex;
   flex-direction:column;
   gap:0;
 }
+
 .trow{
   display:grid;
   grid-template-columns: 1fr 180px;
@@ -166,11 +189,14 @@ a:hover{opacity:.9}
   padding: 12px 10px;
   border-bottom: 1px solid rgba(231,229,222,.10);
 }
+
 .trow:last-child{border-bottom:none}
+
 .thead{
   padding-top: 8px;
   padding-bottom: 10px;
 }
+
 .thead .tcell{
   color: rgba(243,241,234,.9);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -178,11 +204,18 @@ a:hover{opacity:.9}
   letter-spacing:.14em;
   font-size:11px;
 }
+
 .tcell{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-size: 14px;
   letter-spacing:.02em;
+  min-width:0; /* prevents long text forcing horizontal scroll */
 }
+
+.trow .tcell:first-child{
+  overflow-wrap:anywhere; /* wrap long names instead of pushing page wide */
+}
+
 .right{text-align:right}
 
 .fineprint{
@@ -193,6 +226,7 @@ a:hover{opacity:.9}
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
+/* ===== Footer ===== */
 .footer{
   padding: 18px 28px;
   border-top:1px solid var(--line);
@@ -201,4 +235,37 @@ a:hover{opacity:.9}
   font-size: 12px;
   display:flex;
   justify-content:center;
+}
+
+/* ===== Mobile fixes ===== */
+@media (max-width: 640px){
+  .topbar{
+    flex-wrap:wrap;
+    padding:14px 16px;
+    gap:12px;
+  }
+
+  .nav{
+    width:100%;
+    flex-wrap:wrap;
+    gap:10px 14px;
+  }
+
+  .page-head h1{
+    font-size:34px; /* prevents Portfolio heading from clipping */
+  }
+
+  .trow{
+    grid-template-columns: 1fr 96px; /* shrink % column on mobile */
+    padding: 10px 6px;
+  }
+
+  .tcell{
+    font-size:13px;
+  }
+
+  .brand-logo{
+    height:13px; /* tiny tweak for small screens */
+    top:1px;
+  }
 }
