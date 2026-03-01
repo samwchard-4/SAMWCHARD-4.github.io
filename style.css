@@ -332,3 +332,15 @@ a:hover{opacity:.9}
     margin-bottom: 10px;
   }
 }
+/* ===== FORCE SINGLE COLUMN ON MOBILE ===== */
+@media (max-width: 900px){
+
+  .page{
+    flex-direction: column;
+  }
+
+  .page > *{
+    width:100%;
+  }
+
+}
