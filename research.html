@@ -4,11 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Research — Chard Capital</title>
+  <meta name="description" content="Company notes and investment research." />
+
+  <link rel="icon" type="image/png" href="/logov2.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="bg">
+
+  <!-- Header -->
   <header class="topbar">
-    <a class="brand" href="index.html">CHARD CAPITAL</a>
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="/logov2.png" alt="Chard Capital Logo" />
+      <span>CHARD CAPITAL</span>
+    </a>
+
     <nav class="nav">
       <a href="portfolio.html">Portfolio</a>
       <a href="letters.html">Letters</a>
@@ -17,6 +27,7 @@
     </nav>
   </header>
 
+  <!-- Page Content -->
   <main class="page">
     <div class="page-head">
       <h1>Research</h1>
@@ -25,14 +36,20 @@
 
     <section class="card">
       <p class="muted">Nothing published yet.</p>
-      <p class="fineprint">When you add posts, keep them short and linkable.</p>
+      <p class="fineprint">
+        Research posts will be archived here as they are written.
+      </p>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <span>© <span id="y"></span> Chard Capital</span>
   </footer>
 
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
