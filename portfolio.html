@@ -5,11 +5,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Portfolio — Chard Capital</title>
   <meta name="description" content="Portfolio allocations updated monthly." />
+
+  <link rel="icon" type="image/png" href="/logov2.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="bg">
+
+  <!-- Header -->
   <header class="topbar">
-    <a class="brand" href="index.html">CHARD CAPITAL</a>
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="/logov2.png" alt="Chard Capital Logo" />
+      <span>CHARD CAPITAL</span>
+    </a>
+
     <nav class="nav">
       <a class="active" href="portfolio.html">Portfolio</a>
       <a href="letters.html">Letters</a>
@@ -18,39 +27,94 @@
     </nav>
   </header>
 
+  <!-- Page Content -->
   <main class="page">
     <div class="page-head">
       <h1>Portfolio</h1>
-      <p class="muted">Updated monthly • Allocations shown as % of total portfolio</p>
+      <p class="muted">
+        Updated monthly • Allocations shown as % of total portfolio
+      </p>
     </div>
 
     <section class="card">
       <div class="table">
+
         <div class="trow thead">
           <div class="tcell">Position</div>
           <div class="tcell right">% of Portfolio</div>
         </div>
 
-        <div class="trow"><div class="tcell">CASH</div><div class="tcell right">23.21%</div></div>
-        <div class="trow"><div class="tcell">BRK.B — Berkshire Hathaway</div><div class="tcell right">14.49%</div></div>
-        <div class="trow"><div class="tcell">BN — Brookfield Corporation</div><div class="tcell right">12.78%</div></div>
-        <div class="trow"><div class="tcell">GOOGL — Alphabet Class A</div><div class="tcell right">10.86%</div></div>
-        <div class="trow"><div class="tcell">FRFHF — Fairfax Financial</div><div class="tcell right">9.93%</div></div>
-        <div class="trow"><div class="tcell">NKE — Nike</div><div class="tcell right">9.01%</div></div>
-        <div class="trow"><div class="tcell">BEPC — Brookfield Renewable</div><div class="tcell right">4.86%</div></div>
-        <div class="trow"><div class="tcell">NVDA — NVIDIA</div><div class="tcell right">3.72%</div></div>
-        <div class="trow"><div class="tcell">ACN — Accenture</div><div class="tcell right">3.64%</div></div>
-        <div class="trow"><div class="tcell">HOOD — Robinhood Markets</div><div class="tcell right">3.00%</div></div>
-        <div class="trow"><div class="tcell">SNOW — Snowflake</div><div class="tcell right">2.36%</div></div>
-        <div class="trow"><div class="tcell">UA — Under Armour</div><div class="tcell right">2.12%</div></div>
+        <div class="trow">
+          <div class="tcell">CASH</div>
+          <div class="tcell right">23.21%</div>
+        </div>
+
+        <div class="trow">
+          <div class="tcell">BRK.B — Berkshire Hathaway</div>
+          <div class="tcell right">14.49%</div>
+        </div>
+
+        <div class="trow">
+          <div class="tcell">BN — Brookfield Corporation</div>
+          <div class="tcell right">12.78%</div>
+        </div>
+
+        <div class="trow">
+          <div class="tcell">GOOGL — Alphabet Class A</div>
+          <div class="tcell right">10.86%</div>
+        </div>
+
+        <div class="trow">
+          <div class="tcell">FRFHF — Fairfax Financial</div>
+          <div class="tcell right">9.93%</div>
+        </div>
+
+        <div class="trow">
+          <div class="tcell">NKE — Nike</div>
+          <div class="tcell right">9.01%</div>
+        </div>
+
+        <div class="trow">
+          <div class="tcell">BEPC — Brookfield Renewable</div>
+          <div class="tcell right">4.86%</div>
+        </div>
+
+        <div class="trow">
+          <div class="tcell">NVDA — NVIDIA</div>
+          <div class="tcell right">3.72%</div>
+        </div>
+
+        <div class="trow">
+          <div class="tcell">ACN — Accenture</div>
+          <div class="tcell right">3.64%</div>
+        </div>
+
+        <div class="trow">
+          <div class="tcell">HOOD — Robinhood Markets</div>
+          <div class="tcell right">3.00%</div>
+        </div>
+
+        <div class="trow">
+          <div class="tcell">SNOW — Snowflake</div>
+          <div class="tcell right">2.36%</div>
+        </div>
+
+        <div class="trow">
+          <div class="tcell">UA — Under Armour</div>
+          <div class="tcell right">2.12%</div>
+        </div>
+
       </div>
 
       <p class="fineprint">
-        Totals may not equal exactly 100.00% due to rounding. This is personal disclosure and not investment advice.
+        Totals may not equal exactly 100.00% due to rounding.
+        This is personal disclosure and not investment advice.
       </p>
+
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <span>© <span id="y"></span> Chard Capital</span>
   </footer>
@@ -58,5 +122,6 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
