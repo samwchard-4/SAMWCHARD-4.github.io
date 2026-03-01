@@ -1,7 +1,7 @@
 :root{
-  --bg: #14261f;         /* dark green */
+  --bg: #14261f;
   --bg2:#0e1b16;
-  --paper:#e7e5de;       /* warm light */
+  --paper:#e7e5de;
   --paper2:#dcd9cf;
   --text:#f3f1ea;
   --muted:rgba(243,241,234,.72);
@@ -10,8 +10,11 @@
 }
 
 *{box-sizing:border-box}
-html,body{height:100%}
-html,body{overflow-x:hidden;} /* prevents sideways scroll */
+html,body{
+  height:100%;
+  overflow-x:hidden;
+}
+
 body{
   margin:0;
   font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
@@ -23,6 +26,7 @@ a{color:inherit; text-decoration:none}
 a:hover{opacity:.9}
 
 /* ===== Header ===== */
+
 .topbar{
   display:flex;
   align-items:center;
@@ -32,7 +36,6 @@ a:hover{opacity:.9}
   border-bottom:1px solid var(--line);
 }
 
-/* Brand becomes logo + text */
 .brand{
   display:flex;
   align-items:center;
@@ -44,14 +47,13 @@ a:hover{opacity:.9}
   text-transform:uppercase;
 }
 
-/* THIS is the key: logo height matches text size */
 .brand-logo{
-  height:14px;      /* same as .brand font-size */
+  height:14px;
   width:auto;
   display:block;
   object-fit:contain;
   position:relative;
-  top:1px;          /* tiny optical alignment */
+  top:1px;
 }
 
 .nav{
@@ -62,8 +64,10 @@ a:hover{opacity:.9}
   letter-spacing:.08em;
   text-transform:uppercase;
 }
+
 .nav a{opacity:.82}
 .nav a.active{opacity:1}
+
 .nav a.active::after{
   content:"";
   display:block;
@@ -73,7 +77,8 @@ a:hover{opacity:.9}
   margin-top:6px;
 }
 
-/* ===== Home hero ===== */
+/* ===== Home Hero ===== */
+
 .hero{
   min-height: calc(100vh - 62px);
   display:flex;
@@ -87,11 +92,10 @@ a:hover{opacity:.9}
   text-align:center;
 }
 
-/* Large homepage logo */
 .hero-logo{
-  width: 360px;
-  max-width: 85%;
-  margin-bottom: 6px;
+  width:360px;
+  max-width:85%;
+  margin-bottom:10px;
 }
 
 .title{
@@ -142,19 +146,21 @@ a:hover{opacity:.9}
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* ===== Inner pages ===== */
+/* ===== Inner Pages ===== */
+
 .page{
   padding: 46px 18px 66px;
   display:flex;
   justify-content:center;
 }
+
 .page > *{
   width:min(980px, 92vw);
 }
 
 .page-head h1{
   margin:0;
-  font-size: 44px;
+  font-size:44px;
   letter-spacing:.04em;
   font-weight:500;
 }
@@ -166,35 +172,37 @@ a:hover{opacity:.9}
   font-size:13px;
 }
 
+/* ===== Cards ===== */
+
 .card{
   margin-top: 22px;
   background: rgba(231,229,222,.06);
   border:1px solid rgba(231,229,222,.18);
   border-radius: 18px;
-  padding: 18px 18px;
+  padding: 18px;
   box-shadow: var(--shadow);
 }
 
-/* ===== Portfolio table ===== */
+/* ===== Portfolio Table ===== */
+
 .table{
   display:flex;
   flex-direction:column;
-  gap:0;
 }
 
 .trow{
   display:grid;
   grid-template-columns: 1fr 180px;
-  gap: 14px;
-  padding: 12px 10px;
-  border-bottom: 1px solid rgba(231,229,222,.10);
+  gap:14px;
+  padding:12px 10px;
+  border-bottom:1px solid rgba(231,229,222,.10);
 }
 
 .trow:last-child{border-bottom:none}
 
 .thead{
-  padding-top: 8px;
-  padding-bottom: 10px;
+  padding-top:8px;
+  padding-bottom:10px;
 }
 
 .thead .tcell{
@@ -207,13 +215,13 @@ a:hover{opacity:.9}
 
 .tcell{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 14px;
+  font-size:14px;
   letter-spacing:.02em;
-  min-width:0; /* prevents long text forcing horizontal scroll */
+  min-width:0;
 }
 
 .trow .tcell:first-child{
-  overflow-wrap:anywhere; /* wrap long names instead of pushing page wide */
+  overflow-wrap:anywhere;
 }
 
 .right{text-align:right}
@@ -227,120 +235,72 @@ a:hover{opacity:.9}
 }
 
 /* ===== Footer ===== */
+
 .footer{
-  padding: 18px 28px;
+  padding:18px 28px;
   border-top:1px solid var(--line);
   color: rgba(243,241,234,.6);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 12px;
+  font-size:12px;
   display:flex;
   justify-content:center;
 }
 
-/* ===== Mobile fixes ===== */
-@media (max-width: 640px){
-  .topbar{
-    flex-wrap:wrap;
-    padding:14px 16px;
-    gap:12px;
-  }
+/* ===== Responsive ===== */
 
-  .nav{
-    width:100%;
-    flex-wrap:wrap;
-    gap:10px 14px;
-  }
-
-  .page-head h1{
-    font-size:34px; /* prevents Portfolio heading from clipping */
-  }
-
-  .trow{
-    grid-template-columns: 1fr 96px; /* shrink % column on mobile */
-    padding: 10px 6px;
-  }
-
-  .tcell{
-    font-size:13px;
-  }
-
-  .brand-logo{
-    height:13px; /* tiny tweak for small screens */
-    top:1px;
-  }
-}
-/* ===== Mobile fixes (final) ===== */
-@media (max-width: 640px){
-
-  /* Make header stack cleanly */
-  .topbar{
-    flex-wrap:wrap;
-    align-items:flex-start;
-    padding:14px 16px;
-    gap:10px;
-  }
-
-  /* Brand stays on its own line */
-  .brand{
-    width:100%;
-  }
-
-  /* Nav becomes a wrapped row under the brand */
-  .nav{
-    width:100%;
-    flex-wrap:wrap;
-    gap:10px 14px;
-  }
-
-  /* Prevent long headings from clipping */
-  .page-head h1{
-    font-size:34px;
-    line-height:1.1;
-    word-break:break-word;
-  }
-
-  /* Portfolio table: force no sideways scrolling */
-  .card{
-    padding: 14px 12px;
-  }
-
-  .trow{
-    grid-template-columns: 1fr 86px; /* tighter percent column */
-    gap:10px;
-    padding: 10px 6px;
-  }
-
-  .tcell{
-    font-size:13px;
-    min-width:0;
-  }
-
-  .trow .tcell:first-child{
-    overflow-wrap:anywhere;
-  }
-
-  /* Slightly smaller header logo on mobile */
-  .brand-logo{
-    height:13px;
-    top:1px;
-  }
-
-  /* Homepage hero logo slightly smaller */
-  .hero-logo{
-    width: 280px;
-    max-width: 90%;
-    margin-bottom: 10px;
-  }
-}
-/* ===== FORCE SINGLE COLUMN ON MOBILE ===== */
 @media (max-width: 900px){
 
   .page{
-    flex-direction: column;
+    flex-direction:column;
   }
 
   .page > *{
     width:100%;
   }
 
+  .topbar{
+    flex-wrap:wrap;
+    align-items:flex-start;
+    padding:14px 16px;
+    gap:12px;
+  }
+
+  .brand{
+    width:100%;
+  }
+
+  .nav{
+    width:100%;
+    flex-wrap:wrap;
+    gap:10px 14px;
+  }
+
+  .page-head h1{
+    font-size:34px;
+    line-height:1.1;
+    word-break:break-word;
+  }
+
+  .card{
+    padding:14px 12px;
+  }
+
+  .trow{
+    grid-template-columns: 1fr 100px;
+    gap:12px;
+    padding:10px 6px;
+  }
+
+  .tcell{
+    font-size:13px;
+  }
+
+  .brand-logo{
+    height:13px;
+  }
+
+  .hero-logo{
+    width:280px;
+    max-width:90%;
+  }
 }
